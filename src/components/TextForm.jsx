@@ -1,25 +1,56 @@
 import React, { useState } from 'react'
 
 export default function TextForm(props) {
-    const [first, setFirst] = useState("Enter Text Here");
+    const [text, setText] = useState("");
 
     const handleUpClick = () => {
-        // console.log(first);
-        setFirst(first.toUpperCase());
+        // console.log(text);
+        setText(text.toUpperCase());
+    }
+
+    const handleLoClick = () => {
+        // console.log(text);
+        setText(text.toLowerCase());
+    }
+
+    const handleDelClick = () => {
+        let delText = text.replace(/\s/g, '');
+        console.log(delText);
+        setText(delText);
     }
 
     const handleOnchange = (event) => {
         // console.log("onChange");
-        setFirst(event.target.value);
+        setText(event.target.value);
     }
+
+    const handleCopy = () => {
+        let text = document.getElementById("mytextbox");
+        text.select();
+        navigator.clipboard.writeText(text.value);
+    }
+
+    // avg 300 words per min so 5 words per second
+    //300=>1min  1=> 0.0033mins
     return (
         <>
-            <h2>{props.heading}</h2>
-            <div className="mb-3">
-                <textarea className="form-control" id="mytextbox" rows="5" value={first} onChange={handleOnchange}></textarea>
+            <div className="container">
+                <h2>{props.heading}</h2>
+
+                <div className="mb-3">
+                    <textarea className="form-control" id="mytextbox" rows="10" value={text} onChange={handleOnchange}></textarea>
+                </div>
+                <button className="btn btn-outline-danger mx-3" onClick={handleUpClick}>Convert To Uppercase</button>
+                <button className="btn btn-outline-danger mx-3" onClick={handleLoClick}>Convert To Lowercase</button>
+                <button className="btn btn-outline-danger mx-3" onClick={handleDelClick}>Delete Spaces</button>
+                <button className="btn btn-outline-danger mx-3" onClick={handleCopy}>Copy Text</button>
             </div>
-            <button className="btn btn-primary mx-3" onClick={handleUpClick}>Convert To Uppercase</button>
-            <button className="btn btn-primary mx-3">Convert To Lowercase</button>
+            <div className="container">
+                <h2>The Data About your Text</h2>
+                <p className='my-0'>Words: {text.split(" ").length}</p>
+                <p>Characters: {text.length}</p>
+                <p>minutes to read given text: {text.split(" ").length * 0.0033333} Mins</p>
+            </div>
         </>
     )
 }
