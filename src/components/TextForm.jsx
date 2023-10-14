@@ -6,17 +6,20 @@ export default function TextForm(props) {
     const handleUpClick = () => {
         // console.log(text);
         setText(text.toUpperCase());
+        props.showAlert("Text Changed to UpperCase", "UPPER", "success");
     }
 
     const handleLoClick = () => {
         // console.log(text);
         setText(text.toLowerCase());
+        props.showAlert("Text Changed to LowerCase", "lower", "success");
     }
 
     const handleDelClick = () => {
         let delText = text.replace(/\s/g, '');
         console.log(delText);
         setText(delText);
+        props.showAlert("Text deleted", "DELETED", "danger");
     }
 
     const handleOnchange = (event) => {
@@ -28,6 +31,7 @@ export default function TextForm(props) {
         let text = document.getElementById("mytextbox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert("Text Copied", "COPIED", "success");
     }
 
     // avg 300 words per min so 5 words per second
