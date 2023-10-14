@@ -34,18 +34,38 @@ export default function TextForm(props) {
     //300=>1min  1=> 0.0033mins
     return (
         <>
-            <div className="container">
+            <div className="container"
+                style={{
+                    backgroundColor: props.mode === 'light' ? '#fff' : '#565656',
+                    color: props.mode === 'dark' ? '#fff' : '#565656'
+                }}>
+
                 <h2>{props.heading}</h2>
 
                 <div className="mb-3">
-                    <textarea className="form-control" id="mytextbox" rows="10" value={text} onChange={handleOnchange}></textarea>
+                    <textarea
+                        className="form-control"
+                        id="mytextbox"
+                        rows="10"
+                        value={text}
+                        onChange={handleOnchange}
+                        style={{
+                            backgroundColor: props.mode === 'light' ? '#fff' : '#565656',
+                            color: props.mode === 'dark' ? '#fff' : '#565656'
+                        }}>
+
+                    </textarea>
                 </div>
                 <button className="btn btn-outline-danger mx-3" onClick={handleUpClick}>Convert To Uppercase</button>
                 <button className="btn btn-outline-danger mx-3" onClick={handleLoClick}>Convert To Lowercase</button>
                 <button className="btn btn-outline-danger mx-3" onClick={handleDelClick}>Delete Spaces</button>
                 <button className="btn btn-outline-danger mx-3" onClick={handleCopy}>Copy Text</button>
             </div>
-            <div className="container">
+            <div className="container"
+                style={{
+                    backgroundColor: props.mode === 'light' ? '#fff' : '#565656',
+                    color: props.mode === 'dark' ? '#fff' : '#565656'
+                }}>
                 <h2>The Data About your Text</h2>
                 <p className='my-0'>Words: {text.split(" ").length}</p>
                 <p>Characters: {text.length}</p>
