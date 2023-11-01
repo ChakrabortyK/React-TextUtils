@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ChakrabortyK/React-TextUtils/static/css/main.073c9b0a.css",
-    "main.js": "/ChakrabortyK/React-TextUtils/static/js/main.0243de76.js",
+    "main.js": "/ChakrabortyK/React-TextUtils/static/js/main.1807f98a.js",
     "static/js/787.28cb0dcd.chunk.js": "/ChakrabortyK/React-TextUtils/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/ChakrabortyK/React-TextUtils/index.html",
     "main.073c9b0a.css.map": "/ChakrabortyK/React-TextUtils/static/css/main.073c9b0a.css.map",
-    "main.0243de76.js.map": "/ChakrabortyK/React-TextUtils/static/js/main.0243de76.js.map",
+    "main.1807f98a.js.map": "/ChakrabortyK/React-TextUtils/static/js/main.1807f98a.js.map",
     "787.28cb0dcd.chunk.js.map": "/ChakrabortyK/React-TextUtils/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.0243de76.js"
+    "static/js/main.1807f98a.js"
   ]
 }
