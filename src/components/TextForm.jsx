@@ -4,20 +4,19 @@ export default function TextForm(props) {
     const [text, setText] = useState("");
 
     const handleUpClick = () => {
-        // console.log(text);
+
         setText(text.toUpperCase());
         props.showAlert("Text Changed to UpperCase", "UPPER", "success");
     }
 
     const handleLoClick = () => {
-        // console.log(text);
+
         setText(text.toLowerCase());
         props.showAlert("Text Changed to LowerCase", "lower", "success");
     }
 
     const handleDelClick = () => {
         let delText = text.replace(/\s/g, '');
-        console.log(delText);
         setText(delText);
         props.showAlert("Text deleted", "DELETED", "danger");
     }
@@ -65,7 +64,7 @@ export default function TextForm(props) {
                 <button className="btn btn-outline-danger mx-3" onClick={handleDelClick}>Delete Spaces</button>
                 <button className="btn btn-outline-danger mx-3" onClick={handleCopy}>Copy Text</button>
             </div>
-            <div className="container"
+            <div className="container my-3"
                 style={{
                     backgroundColor: props.mode === 'light' ? '#fff' : '#565656',
                     color: props.mode === 'dark' ? '#fff' : '#565656'
