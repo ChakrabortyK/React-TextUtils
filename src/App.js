@@ -56,8 +56,9 @@ function App() {
         mode={mode}
         toggleMode={toggleMode}
       />
-      <Routes>
+      <Routes basename="/React-TextUtils">
         <Route
+          exact
           path="/"
           element={
             <>
