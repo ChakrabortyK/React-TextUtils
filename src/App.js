@@ -6,12 +6,7 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [mode, setmode] = useState("light");
@@ -74,7 +69,7 @@ function App() {
             </>
           }
         />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About mode={mode} />} />
       </Routes>
     </>
   );
