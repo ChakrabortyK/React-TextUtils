@@ -59,10 +59,10 @@ export default function TextForm(props) {
 
                     </textarea>
                 </div>
-                <button className="btn btn-outline-danger mx-3" onClick={handleUpClick}>Convert To Uppercase</button>
-                <button className="btn btn-outline-danger mx-3" onClick={handleLoClick}>Convert To Lowercase</button>
-                <button className="btn btn-outline-danger mx-3" onClick={handleDelClick}>Delete Spaces</button>
-                <button className="btn btn-outline-danger mx-3" onClick={handleCopy}>Copy Text</button>
+                <button className="btn btn-outline-danger mx-3 my-2" disabled={text.length === 0} onClick={handleUpClick}>Convert To Uppercase</button>
+                <button className="btn btn-outline-danger mx-3 my-2" disabled={text.length === 0} onClick={handleLoClick}>Convert To Lowercase</button>
+                <button className="btn btn-outline-danger mx-3 my-2" disabled={text.length === 0} onClick={handleDelClick}>Delete Spaces</button>
+                <button className="btn btn-outline-danger mx-3 my-2" disabled={text.length === 0} onClick={handleCopy}>Copy Text</button>
             </div>
             <div className="container my-3"
                 style={{
@@ -70,9 +70,9 @@ export default function TextForm(props) {
                     color: props.mode === 'dark' ? '#fff' : '#565656'
                 }}>
                 <h2>The Data About your Text</h2>
-                <p className='my-0'>Words: {text.split(" ").length}</p>
+                <p className='my-0'>Words: {text.split(/\s/).filter(element => { return element.length !== 0 }).length}</p>
                 <p>Characters: {text.length}</p>
-                <p>minutes to read given text: {text.split(" ").length * 0.0033333} Mins</p>
+                <p>minutes to read given text: {text.split(/\s/).filter(element => { return element.length !== 0 }).length * 0.0042} Mins</p>
             </div>
         </>
     )
